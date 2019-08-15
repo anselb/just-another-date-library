@@ -38,3 +38,16 @@ test('D returns the hour of the day, starting at 0', () => {
   expect(currentDate.hour()).toBe((new Date()).getHours());
   expect(futureDate.hour()).toBe(14);
 });
+
+test('D returns the minutes of the hour, starting at 0', () => {
+  expect(pastDate.min()).toBe(14);
+  expect(currentDate.min()).toBe((new Date()).getMinutes());
+  expect(futureDate.min()).toBe(16);
+});
+
+
+test('D returns the secounds of the minute, starting at 0', () => {
+  expect(pastDate.sec()).toBe(27);
+  expect(currentDate.sec()).toBe((new Date()).getSeconds());
+  expect(futureDate.sec()).toBe(18);
+});
