@@ -2,9 +2,15 @@
   "name": "just-another-date-library",
   "version": "1.0.0",
   "description": "A library that has a custom date object and additional Date methods",
-  "main": "src/index.js",
+  "files": [
+    "esm/*",
+    "emd/*"
+  ],
+  "main": "umd/just-another-date-library.js",
+  "module": "esm/index.js",
   "scripts": {
     "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
+    "prepare": "rollup --config",
     "test": "jest"
   },
   "author": "Ansel <iamansel@gmail.com> (https://github.com/anselb)",
@@ -18,6 +24,8 @@
     "eslint-config-airbnb-base": "^13.2.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jest": "^22.14.1",
-    "jest": "^24.8.0"
+    "jest": "^24.8.0",
+    "rollup": "^1.19.4",
+    "rollup-plugin-terser": "^5.1.1"
   }
 }
