@@ -45,9 +45,22 @@ test('D returns the minutes of the hour, starting at 0', () => {
   expect(futureDate.min()).toBe(16);
 });
 
-
 test('D returns the secounds of the minute, starting at 0', () => {
   expect(pastDate.sec()).toBe(27);
   expect(currentDate.sec()).toBe((new Date()).getSeconds());
   expect(futureDate.sec()).toBe(18);
+});
+
+test('format changes characters to date values in a string', () => {
+  expect(pastDate.format()).toBe('June 19, 1998');
+
+  expect(pastDate.format('Y:M:D:H:I:S')).toBe('1998:June:19:14:14:27');
+  expect(pastDate.format('y:m:d:h:i:s')).toBe('98:Jun:19:14:14:27');
+
+  expect(futureDate.format('Y:M:D:H:I:S')).toBe('2468:October:12:14:16:18');
+  expect(futureDate.format('y:m:d:h:i:s')).toBe('68:Oct:12:14:16:18');
+
+  const singleDigitDate = new D(2001, 2, 3, 4, 5, 6);
+  expect(singleDigitDate.format('Y:M:D:H:I:S')).toBe('2001:March:03:04:05:06');
+  expect(singleDigitDate.format('y:m:d:h:i:s')).toBe('01:Mar:3:4:5:6');
 });
