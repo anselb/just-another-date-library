@@ -95,9 +95,7 @@ export default class D {
     return newString.join('');
   }
 
-  when() {
-    const now = new Date();
-
+  when(now = new Date()) {
     // Year difference
     const nowYear = now.getFullYear();
     const dateYear = this.date.getFullYear();
