@@ -1,5 +1,10 @@
 # Just Another Date Library
 
+![npm bundle size](https://img.shields.io/bundlephobia/min/just-another-date-library.svg)
+![npm](https://img.shields.io/npm/v/just-another-date-library.svg)
+[![Build Status](https://travis-ci.com/anselb/just-another-date-library.svg?branch=master)](https://travis-ci.com/anselb/just-another-date-library)
+[![Coverage Status](https://coveralls.io/repos/github/anselb/just-another-date-library/badge.svg?branch=master)](https://coveralls.io/github/anselb/just-another-date-library?branch=master)
+
 A library with some miscellaneous date things. Some methods were created with the intention of making them more clear. For example, `Date.prototype.getMonth()` returning a month index vs `month()` returning the actual name of the month, and `Date.prototype.getDate()` sounding like it returns the whole date vs `day()` actually returning the day of the month.
 
 ## D Class
