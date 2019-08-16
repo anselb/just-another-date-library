@@ -4,6 +4,7 @@
   "description": "A library that has a custom date object and additional Date methods",
   "main": "src/index.js",
   "scripts": {
+    "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "test": "jest"
   },
   "author": "Ansel <iamansel@gmail.com> (https://github.com/anselb)",
