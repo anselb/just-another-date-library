@@ -1,5 +1,6 @@
-export default class D {
+export default class D extends Date {
   constructor(...args) {
+    super(...args);
     this.date = new Date(...args);
   }
 
