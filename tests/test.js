@@ -64,3 +64,37 @@ test('format changes characters to date values in a string', () => {
   expect(singleDigitDate.format('Y:M:D:H:I:S')).toBe('2001:March:03:04:05:06');
   expect(singleDigitDate.format('y:m:d:h:i:s')).toBe('01:Mar:3:4:5:6');
 });
+
+test('when returns the years, months, or days from a given day until D', () => {
+  const compareDate = new D(2019, 7, 17, 20);
+
+  expect(pastDate.when(compareDate)).toBe('21 years ago');
+  expect(futureDate.when(compareDate)).toBe('449 years from now');
+
+  const oneYearBefore = new D(2018, 7, 17, 20);
+  const oneYearAfter = new D(2020, 7, 17, 20);
+  expect(oneYearBefore.when(compareDate)).toBe('1 year ago');
+  expect(oneYearAfter.when(compareDate)).toBe('1 year from now');
+
+  const monthsBefore = new D(2019, 5, 17, 20);
+  const monthsAfter = new D(2019, 11, 17, 20);
+  expect(monthsBefore.when(compareDate)).toBe('2 months ago');
+  expect(monthsAfter.when(compareDate)).toBe('4 months from now');
+
+  const oneMonthBefore = new D(2019, 6, 17, 20);
+  const oneMonthAfter = new D(2019, 8, 17, 20);
+  expect(oneMonthBefore.when(compareDate)).toBe('1 month ago');
+  expect(oneMonthAfter.when(compareDate)).toBe('1 month from now');
+
+  const daysBefore = new D(2019, 7, 11, 20);
+  const daysAfter = new D(2019, 7, 29, 20);
+  expect(daysBefore.when(compareDate)).toBe('6 days ago');
+  expect(daysAfter.when(compareDate)).toBe('12 days from now');
+
+  const oneDayBefore = new D(2019, 7, 16, 20);
+  const oneDayAfter = new D(2019, 7, 18, 20);
+  expect(oneDayBefore.when(compareDate)).toBe('1 day ago');
+  expect(oneDayAfter.when(compareDate)).toBe('1 day from now');
+
+  expect(compareDate.when(compareDate)).toBe('Today');
+});
