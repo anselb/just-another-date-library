@@ -1,10 +1,10 @@
 {
   "name": "just-another-date-library",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A library that has a custom date object and additional Date methods",
   "files": [
     "esm/*",
-    "emd/*"
+    "umd/*"
   ],
   "main": "umd/just-another-date-library.js",
   "module": "esm/index.js",
